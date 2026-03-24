@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36705.20 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{37476C4C-EBA1-438C-9EB1-902D35639670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SicilyLinesResa", "SicilyLinesResa\SicilyLinesResa.csproj", "{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{37476C4C-EBA1-438C-9EB1-902D35639670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37476C4C-EBA1-438C-9EB1-902D35639670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37476C4C-EBA1-438C-9EB1-902D35639670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC48C6E7-84F0-48C3-A225-69F2EC91EAB1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
