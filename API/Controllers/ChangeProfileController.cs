@@ -10,8 +10,6 @@ namespace API.Controllers
     [Route("[controller]")]
     public class ProfileController : ControllerBase
     {
-        Client c = new Client("admin", "admin", "0600000000", "10 rue oui oui, 94000");
-
         private readonly ILogger<ProfileController> _logger;
 
         public ProfileController(ILogger<ProfileController> logger)
@@ -20,20 +18,24 @@ namespace API.Controllers
         }
 
         [HttpGet(Name = "GetProfile")]
-        public Client Get()
+        public List<Client> Get()
         {
-            return c;
+            return Data.listeClient;
+
         }
 
 
         [HttpPost(Name = "SetProfile")]
-        public bool Set(string numero, string adresse)
+        public bool Set(int id, string nom, string adresse, string codePostal, string ville)
         {
-            if (numero.Length == 10 && Regex.IsMatch(numero, @"^[0-9]+$"))
+            Client? client = Data.listeClient.FirstOrDefault(c => c.Id == id);
+
+            if (codePostal.Length == 5 && Regex.IsMatch(codePostal, @"^[0-9]+$"))
             {
-                string req = $"update client set numero = {numero}, set adresse = {adresse} where nom = {c.Nom} AND where prenom = {c.Prenom}";
-                c.Numero = numero;
-                c.Adresse = adresse;
+                string req = $"update client SET codePostal = {codePostal}, SET adresse = {adresse}, SET ville = {ville} where id = {Data.c.Id}";
+                Data.c.Adresse = adresse;
+                Data.c.CodePostal = codePostal;
+                Data.c.Ville = ville;
                 return true;
             }
             return false;

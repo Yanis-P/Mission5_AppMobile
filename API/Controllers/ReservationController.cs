@@ -6,10 +6,6 @@ namespace API.Controllers
     [Route("[controller]")]
     public class ReservationController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<ReservationController> _logger;
 
@@ -21,10 +17,7 @@ namespace API.Controllers
         [HttpGet(Name = "GetReservation")]
         public List<Reservation> Get()
         {
-            List<Reservation> reservation = new List<Reservation>();
-            reservation.Add(new Reservation());
-
-            return reservation;
+            return Data.listeReservations;
         }
     }
 }
