@@ -8,8 +8,8 @@
     Title="SicilyLinesResa">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Connexion"
+        ContentTemplate="{DataTemplate local:LogInPage}"
+        Route="LogInPage" />
 
 </Shell>
