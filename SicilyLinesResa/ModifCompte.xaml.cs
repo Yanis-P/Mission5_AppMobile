@@ -17,6 +17,7 @@ public partial class ModifCompte : ContentPage
         await Navigation.PopAsync();
     }
 
+
     async private void Enregistrer_Clicked(object sender, EventArgs e)
     {
         try
@@ -35,19 +36,12 @@ public partial class ModifCompte : ContentPage
             HttpClient clientHttp = new HttpClient();
             var restUrl = "http://localhost:5044/Profile";
 
-            // Sérialiser l'objet en JSON
-            var json = JsonConvert.SerializeObject(new
-            {
-                id = _clientData.Id,
-                adresse = _clientData.Adresse,
-                codePostal = _clientData.CodePostal,
-                ville = _clientData.Ville
-
-            });
+            // Sérialiser directement l'objet _clientData
+            var json = JsonConvert.SerializeObject(_clientData);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-            // Envoyer la requête PUT (ou PostAsync pour créer)
-            HttpResponseMessage response = await clientHttp.PostAsync(restUrl, content);
+            // Envoyer la requête PUT pour modifier
+            HttpResponseMessage response = await clientHttp.PutAsync(restUrl, content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -56,7 +50,8 @@ public partial class ModifCompte : ContentPage
             }
             else
             {
-                await DisplayAlert("Erreur", Convert.ToString(content), "OK");
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                await DisplayAlert("Erreur", errorMessage, "OK");
             }
         }
         catch (Exception ex)

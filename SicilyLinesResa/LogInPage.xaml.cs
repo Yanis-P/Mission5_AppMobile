@@ -3,7 +3,7 @@ namespace SicilyLinesResa;
 public class LoginInfo
 {
     public string Login { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
+    public string Id { get; set; } = string.Empty;
 }
 
 public partial class LogInPage : ContentPage
@@ -30,7 +30,7 @@ public partial class LogInPage : ContentPage
                     BindingContext = new LoginInfo
                     {
                         Login = logIn.Text,
-                        Password = mdp.Text
+                        Id = 1.ToString()
                     }
                 });
             }

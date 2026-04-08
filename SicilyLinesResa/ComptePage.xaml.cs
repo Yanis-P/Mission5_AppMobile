@@ -17,23 +17,30 @@ public partial class ComptePage : ContentPage
     {
         try
         {
+            // Vérifier que le BindingContext contient bien les infos de connexion
+            if (BindingContext is not LoginInfo loginInfo)
+                return;
+
             HttpClient client = new HttpClient();
-            var restUrl = "http://localhost:5044/Profile";
+            // Appel direct par ID au lieu de récupérer tous les clients
+            var restUrl = $"http://localhost:5044/Client/{loginInfo.Id}";
             client.BaseAddress = new Uri(restUrl);
+
             HttpResponseMessage response = await client.GetAsync(restUrl);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                await DisplayAlert("Erreur", "Impossible de récupérer le client", "OK");
+                return;
+            }
+
             var content = await response.Content.ReadAsStringAsync();
 
-            // recherche avec le login du client pour trouver le client correspondant
-            if (BindingContext is LoginInfo loginInfo)
-            {
-                var items = JsonConvert.DeserializeObject<List<Client>>(content);
+            // Désérialisation directe d'un seul client
+            _currentClient = JsonConvert.DeserializeObject<Client>(content);
 
-                // Filtrer le client correspondant au loginInfo
-                _currentClient = items?.FirstOrDefault(c => c.Nom == loginInfo.Login);
-
-                // Mettre à jour le BindingContext avec le client filtré
-                BindingContext = _currentClient;
-            }
+            // Mettre à jour le BindingContext avec le client filtré
+            BindingContext = _currentClient;
         }
         catch (Exception ex)
         {
