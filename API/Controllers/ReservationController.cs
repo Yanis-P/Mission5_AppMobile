@@ -1,3 +1,4 @@
+using API.DAO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -15,9 +16,9 @@ namespace API.Controllers
         }
 
         [HttpGet(Name = "GetReservation")]
-        public List<Reservation> Get()
+        public List<Reservation> Get(int idClient)
         {
-            return Data.listeReservations;
+            return ReservationDAO.getReservations(idClient);
         }
     }
 }

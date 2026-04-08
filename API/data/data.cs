@@ -6,10 +6,12 @@ static class Data
 {
     public static List<Client> listeClient = new List<Client>();
 
+    public static API.Type montype = new API.Type(1, "test", 100);
+
     public static Liaison liaison = new Liaison(1, 1, 2);
     public static Liaison liaison1 = new Liaison(2, 1, 3);
     public static Liaison liaison2 = new Liaison(3, 1, 4);
-    public static Liaison liaison3 = new Liaison(4, 1, 5);
+    public static Liaison liaison3 = new Liaison(4, 1, 5);  
 
     public static Traversee traversee = new Traversee(1, 1,liaison.Id, DateTime.Now, new DateTime(2026, 06, 25));
     public static Traversee traversee1 = new Traversee(2, 2,liaison1.Id, DateTime.Now, new DateTime(2026, 07, 12));
@@ -22,10 +24,10 @@ static class Data
     public static Client c = new Client(1, "admin", "5 rue du berry", "94550", "Chevilly-Larue", listeReservations);
 
 
-    public static Reservation reservation = new Reservation(1, DateTime.Now, traversee.Id, c.Id);
-    public static Reservation reservation1 = new Reservation(2, DateTime.Now, traversee1.Id, c.Id);
-    public static Reservation reservation2 = new Reservation(3, DateTime.Now, traversee2.Id, c.Id);
-    public static Reservation reservation3 = new Reservation(4, DateTime.Now, traversee3.Id, c.Id);
+    public static Reservation reservation = new Reservation(1, DateTime.Now, traversee.Id, c.Id, montype.Id);
+    public static Reservation reservation1 = new Reservation(2, DateTime.Now, traversee1.Id, c.Id, montype.Id);
+    public static Reservation reservation2 = new Reservation(3, DateTime.Now, traversee2.Id, c.Id, montype.Id);
+    public static Reservation reservation3 = new Reservation(4, DateTime.Now, traversee3.Id, c.Id, montype.Id);
 
 
     static Data()
