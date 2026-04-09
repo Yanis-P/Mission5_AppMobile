@@ -33,7 +33,9 @@ namespace SicilyLinesResa
         public string Adresse { get => adresse; set => adresse = value; }
         public string CodePostal { get => codePostal; set => codePostal = value; }
         public string Ville { get => ville; set => ville = value; }
-        
+
         // public List<Reservation> ListeReservation { get => listeReservation; set => listeReservation = value; }
+
+        public override string ToString() => $"Client [id={id}, nom={nom}, adresse={adresse}, codePostal={codePostal}, ville={ville}]";
     }
 }

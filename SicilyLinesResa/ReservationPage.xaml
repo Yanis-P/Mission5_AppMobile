@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SicilyLinesResa.ReservationPage"
+             Shell.BackgroundColor="DeepSkyBlue"
+             Shell.TitleColor="White"
+             Title="Reservation">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Profil" x:Name="Profil" Clicked="Profil_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="MaterialIconsRegular" 
+                        Glyph="&#xe853;"
+                        Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <VerticalStackLayout>
+
+        <ListView x:Name="ReservationsListView" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Date}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
+    

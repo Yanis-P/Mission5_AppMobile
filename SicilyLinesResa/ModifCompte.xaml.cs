@@ -6,11 +6,13 @@ public partial class ModifCompte : ContentPage
 {
     private Client? _clientData = null;
 
-    public ModifCompte()
-	{
-
+    public ModifCompte(Client client)
+    {
         InitializeComponent();
-	}
+        _clientData = client;
+        BindingContext = client;
+        //DisplayAlert("Info", $"Client chargé : {client.ToString()}", "OK");
+    }
 
     async private void Retour_Clicked(object sender, EventArgs e)
     {
@@ -22,26 +24,20 @@ public partial class ModifCompte : ContentPage
     {
         try
         {
-            if (BindingContext is Client client)
-            {
-                _clientData = new Client(client.Id, client.Nom, client.Mdp, eA.Text, eCP.Text, eV.Text);
-            }
-
             if (_clientData == null)
             {
                 await DisplayAlert("Erreur", "Impossible de récupérer les informations du client.", "OK");
                 return;
             }
 
+            _clientData.Adresse = eA.Text;
+            _clientData.CodePostal = eCP.Text;
+            _clientData.Ville = eV.Text;
+
             HttpClient clientHttp = new HttpClient();
-            var restUrl = "http://localhost:5044/Profile";
+            var restUrl = $"http://localhost:5044/Profile?id={_clientData.Id}&adresse={_clientData.Adresse}&codePostal={_clientData.CodePostal}&ville={_clientData.Ville}";
 
-            // Sérialiser directement l'objet _clientData
-            var json = JsonConvert.SerializeObject(_clientData);
-            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-
-            // Envoyer la requête PUT pour modifier
-            HttpResponseMessage response = await clientHttp.PutAsync(restUrl, content);
+            HttpResponseMessage response = await clientHttp.PutAsync(restUrl, null);
 
             if (response.IsSuccessStatusCode)
             {

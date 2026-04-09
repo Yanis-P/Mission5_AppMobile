@@ -21,7 +21,7 @@ static class Data
 
     public static List<Reservation> listeReservations = new List<Reservation>();
 
-    public static Client c = new Client(1, "admin", "5 rue du berry", "94550", "Chevilly-Larue"/*, listeReservations*/);
+    public static Client c = new Client(1, "admin", "5 rue du berry", "94550", "Chevilly-Larue", listeReservations);
 
 
     public static Reservation reservation = new Reservation(1, DateTime.Now, traversee.Id, c.Id, montype.Id);

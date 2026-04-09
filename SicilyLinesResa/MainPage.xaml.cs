@@ -7,26 +7,22 @@
         {
             InitializeComponent();
 
-            if (BindingContext is LoginInfo loginInfo)
-            {
-                string login = loginInfo.Login;
-            }
         }
 
         async private void Profil_Clicked(object sender, EventArgs e)
         {
-            if (BindingContext is not LoginInfo loginInfo)
-                return;
-
-            await Navigation.PushAsync(new ComptePage()
-            {
-                BindingContext = new LoginInfo
-                {
-                    Login = loginInfo.Login
-                }
-            });
+            await Navigation.PushAsync(new ComptePage());
         }
 
+        async private void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ReservationPage());
+        }
+
+        async private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreerResa());
+        }
     }
 
 }

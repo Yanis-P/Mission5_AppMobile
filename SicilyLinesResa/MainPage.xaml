@@ -38,6 +38,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Text="Vos réservations"
+                    Clicked="Button_Clicked"
                     FontSize="18"
                     BackgroundColor="DeepSkyBlue"
                     TextColor="White"
@@ -46,10 +47,12 @@
                     Margin="0,25,0,0"
                 />
 
-                <Button
+               <!-- <Button
                     Grid.Row="1"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Text="Réserver un trajet"
+                    Clicked="Button_Clicked_1"
                     FontSize="18"
                     BackgroundColor="DeepSkyBlue"
                     TextColor="White"
@@ -57,20 +60,8 @@
                     HeightRequest="25"
                     Margin="0,25,5,0"
                     HorizontalOptions="Fill"
-                />
+                /> -->
 
-                <Button
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Text="Réserver un trajet"
-                    FontSize="18"
-                    BackgroundColor="DeepSkyBlue"
-                    TextColor="White"
-                    CornerRadius="10"
-                    HeightRequest="25"
-                    Margin="5,25,0,0"
-                    HorizontalOptions="Fill"
-                />
 
             </Grid>
 

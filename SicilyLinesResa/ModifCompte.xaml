@@ -21,8 +21,8 @@
             <Label x:Name="nom" TextColor="White" Grid.Row="0" Grid.Column="0" Text="{Binding Nom}" FontSize="18" FontAttributes="Bold"/>
             <Label x:Name=" id" TextColor="White" Grid.Row="0" Grid.Column="1" Text="{Binding Id}" FontSize="18" FontAttributes="Bold"/>
 
-            <Entry x:Name="eCP" TextColor="White" Grid.Row="1" Grid.Column="0" Placeholder="{Binding Adresse}" FontSize="16" Margin="0,25,5,0"/>
-            <Entry x:Name="eA" TextColor="White" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CodePostal}" FontSize="16" Margin="5,25,0,0"/>
+            <Entry x:Name="eA" TextColor="White" Grid.Row="1" Grid.Column="0" Placeholder="{Binding Adresse}" FontSize="16" Margin="0,25,5,0"/>
+            <Entry x:Name="eCP" TextColor="White" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CodePostal}" FontSize="16" Margin="5,25,0,0"/>
 
             <Entry x:Name="eV" TextColor="White" Grid.Row="2" Grid.Column="2" Placeholder="{Binding Ville}" FontSize="16" Margin="0,25,0,0" />
 
