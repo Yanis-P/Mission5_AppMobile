@@ -2,24 +2,31 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+
+            if (BindingContext is LoginInfo loginInfo)
+            {
+                string login = loginInfo.Login;
+            }
         }
 
-      /*  private void OnCounterClicked(object sender, EventArgs e)
+        async private void Profil_Clicked(object sender, EventArgs e)
         {
-            count++;
+            if (BindingContext is not LoginInfo loginInfo)
+                return;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            await Navigation.PushAsync(new ComptePage()
+            {
+                BindingContext = new LoginInfo
+                {
+                    Login = loginInfo.Login
+                }
+            });
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }*/
     }
 
 }

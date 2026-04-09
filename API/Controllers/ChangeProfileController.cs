@@ -21,12 +21,11 @@ namespace API.Controllers
         [HttpGet(Name = "GetProfile")]
         public Client Get(int idClient)
         {
-            Console.WriteLine("Nombre de client " + ClientDAO.getClient(idClient));
             return ClientDAO.getClient(idClient);
 
         }
 
-        
+
 
         [HttpPut(Name = "SetProfile")]
         public bool Set(int id, string adresse, string codePostal, string ville)
@@ -41,7 +40,7 @@ namespace API.Controllers
 
             //if (codePostal.Length == 5 && Regex.IsMatch(codePostal.Trim(), @"^[0-9]+$") && Regex.IsMatch(adresse, @"^[A-Za-zÀ-ÖØ-öø-ÿ ,.-]+$") && Regex.IsMatch(ville, @"^[A-Za-zÀ-ÖØ-öø-ÿ ,.-]+$"))
             //{
-                return ClientDAO.updateClient(id, adresse, codePostal, ville);
+            return ClientDAO.updateClient(id, adresse, codePostal, ville);
             //}
             return false;
         }

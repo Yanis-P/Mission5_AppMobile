@@ -7,7 +7,7 @@
              Title="Menu">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Profil" x:Name="Profil">
+        <ToolbarItem Text="Profil" x:Name="Profil" Clicked="Profil_Clicked">
             <ToolbarItem.IconImageSource>
                 <FontImageSource FontFamily="MaterialIconsRegular" 
                         Glyph="&#xe853;"

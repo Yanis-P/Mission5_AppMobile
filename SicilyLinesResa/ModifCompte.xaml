@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SicilyLinesResa.ModifCompte"
+             Title="ModifCompte">
+    <VerticalStackLayout>
+
+        <Grid Padding="5" x:Name="modif">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="nom" TextColor="White" Grid.Row="0" Grid.Column="0" Text="{Binding Nom}" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name=" id" TextColor="White" Grid.Row="0" Grid.Column="1" Text="{Binding Id}" FontSize="18" FontAttributes="Bold"/>
+
+            <Entry x:Name="eCP" TextColor="White" Grid.Row="1" Grid.Column="0" Placeholder="{Binding Adresse}" FontSize="16" Margin="0,25,5,0"/>
+            <Entry x:Name="eA" TextColor="White" Grid.Row="1" Grid.Column="1" Placeholder="{Binding CodePostal}" FontSize="16" Margin="5,25,0,0"/>
+
+            <Entry x:Name="eV" TextColor="White" Grid.Row="2" Grid.Column="2" Placeholder="{Binding Ville}" FontSize="16" Margin="0,25,0,0" />
+
+            <Button x:Name="Retour" Grid.Row="3" Grid.Column="0" Text="Retour" FontSize="18" BackgroundColor="DeepSkyBlue" TextColor="White" CornerRadius="10" HeightRequest="25" Margin="0,25,5,0" Clicked="Retour_Clicked"/>
+            <Button x:Name="Enregistrer" Grid.Row="3" Grid.Column="1" Text="Enregistrer" FontSize="18" BackgroundColor="DeepSkyBlue" TextColor="White" CornerRadius="10" HeightRequest="25" Margin="5,25,0,0" Clicked="Enregistrer_Clicked"/>
+
+        </Grid>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>
