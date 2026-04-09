@@ -12,5 +12,9 @@ namespace API
             this.libelle = libelle;
             this.tarif = tarif;
         }
+
+        public int Id { get => id; set => id = value; }
+        public string Libelle { get => libelle; set => libelle = value; }
+        public int Tarif { get => tarif; set => tarif = value; }
     }
 }
