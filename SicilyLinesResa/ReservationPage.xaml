@@ -18,17 +18,16 @@
     
     <VerticalStackLayout>
 
-        <ListView x:Name="ReservationsListView" Margin="10">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="ReservationsListView" Margin="10">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label Text="{Binding Date}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" />
-                        </StackLayout>
-                    </ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label TextColor="White" Text="{Binding Id}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" />
+                        <Label TextColor="White" Text="{Binding Date}" FontSize="Small" VerticalOptions="Center" Margin="10,0,0,0" />
+                    </StackLayout>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </VerticalStackLayout>
     

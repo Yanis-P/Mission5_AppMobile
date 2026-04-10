@@ -26,3 +26,4 @@ namespace SicilyLinesResa
         public int IdType { get => idType; set => idType = value; }
     }
 }
+

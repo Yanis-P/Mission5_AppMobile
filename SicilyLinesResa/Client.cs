@@ -10,11 +10,11 @@ namespace SicilyLinesResa
         private string adresse;
         private string codePostal;
         private string ville;
-        //private List<Reservation> listeReservation;
+        private List<Reservation> listeReservation;
 
         // cp , ville
 
-        public Client(int id, string nom, string mdp, string adresse, string codePostal, string ville/*, List<Reservation> listeReservation*/)
+        public Client(int id, string nom, string mdp, string adresse, string codePostal, string ville, List<Reservation> listeReservation)
         {
             this.id = id;
             this.nom = nom;
@@ -22,7 +22,7 @@ namespace SicilyLinesResa
             this.adresse = adresse;
             this.codePostal = codePostal;
             this.ville = ville;
-      //      this.ListeReservation = listeReservation;
+            this.ListeReservation = listeReservation;
         }
 
         //private string mail;
@@ -34,7 +34,7 @@ namespace SicilyLinesResa
         public string CodePostal { get => codePostal; set => codePostal = value; }
         public string Ville { get => ville; set => ville = value; }
 
-        // public List<Reservation> ListeReservation { get => listeReservation; set => listeReservation = value; }
+        public List<Reservation> ListeReservation { get => listeReservation; set => listeReservation = value; }
 
         public override string ToString() => $"Client [id={id}, nom={nom}, adresse={adresse}, codePostal={codePostal}, ville={ville}]";
     }
